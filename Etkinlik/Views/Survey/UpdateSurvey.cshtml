@@ -1,0 +1,73 @@
+﻿@model SurveyModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anket Ayarlarını Değiştir</title>
+
+    @Html.Partial("~/Views/metaTag.cshtml")
+    <script src="~/js/DynamicInput.js"></script>
+</head>
+<body>
+    <section>
+        <form method="post" asp-area="" asp-controller="Survey" asp-action="UpdateSurvey">
+
+            <div class="container" style="margin-top:80px">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-12" style="margin-left:auto; margin-right:auto;">
+
+                        <div class="panel panel-default">
+                            <div class="heading">
+                                <div class="survey-heading">
+                                    <strong style="color:white">Anket Ayarlarını Değiştir</strong>
+                                </div>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-sm-12 col-md-10  col-md-offset-3 ">
+                                    <div class="form-group form-group-options">
+                                        <div class="input-group">
+                                            <h3>Anket Sorusu</h3>
+                                            <input class="form-control" asp-for="SurveyTitle" placeholder="Soruyu Girin " type="text">
+                                            <br>
+
+                                            @for (int i = 0; i < Model.SurveyChoiceModel.Count(); i++)
+                                            {
+                                                <div class="input-group input-group-option col-xs-12">
+                                                    <input id="SurveyChoiceModel_@(i)__ChoiceName" name="SurveyChoiceModel[@i].ChoiceName" value="@Model.SurveyChoiceModel[i].ChoiceName" class="form-control" placeholder="Seçenek" type="text">
+                                                    <span class="input-group-addon input-group-addon-remove">
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                                                </div>
+                                                <script> setIndex(@(i));</script>
+                                            }
+
+                                            <div class="input-group input-group-option col-xs-12">
+                                                <input id="SurveyChoiceModel_0__ChoiceName" name="SurveyChoiceModel[0].ChoiceName" class="form-control" placeholder="Seçenek" type="text">
+                                                <span class="input-group-addon input-group-addon-remove">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6">
+                                        <button formmethod="post" type="submit" class="btn-survey ">Değiştir</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar navbar-fixed-bottom">
+                    <footer>
+                        <p>&nbsp;&copy; 2018 - Etkinlik</p>
+                    </footer>
+                </div>
+            </div>
+
+        </form>
+    </section>
+</body>
+</html>

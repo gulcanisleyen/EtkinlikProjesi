@@ -1,0 +1,52 @@
+﻿
+element {
+    border-radius: 3px;
+    margin: -20px auto 0 auto;
+    padding: 15px 0;
+    position: absolute;
+    background: red;
+    width: 90%;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
+body {
+    background-color: white;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+ul {
+    list-style-type: none;
+}
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.btn{
+    padding:2px;
+}
+.heading {
+    background:white;
+    margin: 0px;
+    padding: 5px;
+    position: center;
+}
+
+.btn.btn-primary.btn-link, .btn.btn-primary.btn-link:active, .btn.btn-primary.btn-link:focus, .btn.btn-primary.btn-link:hover {
+    background-color: transparent;
+    color: #9c27b0;
+}
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4)
+}

@@ -1,0 +1,101 @@
+﻿@using Etkinlik.Models.ActivityViewModels
+@model UpdateActivityModel
+
+@using Etkinlik.Models.ActivityViewModels
+@{
+    ViewData["Title"] = "Etkinlik Güncelle";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Etkinlik Güncelle</title>
+    @Html.Partial("~/Views/metaTag.cshtml")
+</head>
+
+<body>
+    <div class="container" style="margin-top:40px">
+
+
+        <form method="post" asp-area="" asp-controller="Post" asp-action="UpdateActivity">
+            <div class="container" style="margin-top:40px">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-12 col-lg-offset-3">
+
+                        <div class="panel panel-default">
+                            <div class="heading">
+                                <div class="headingg">
+                                    <strong style="color:white">Etkinlik Tablosu</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 col-lg-offset-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+
+                                            <label>Activity Name</label>
+                                            <input asp-for="PostName" class="form-control" type="text" placeholder="Enter Activity Name" />
+
+                                        </div>
+                                        <span asp-validation-for="PostName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 col-lg-offset-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label> Activity Detail</label>
+                                            <input asp-for="PostDesc" class="form-control" type="text" placeholder="Enter Activity Detail" />
+                                        </div>
+                                        <span asp-validation-for="PostDesc" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 col-lg-offset-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label> Activity Date</label>
+                                            <input asp-for="PostDate" type="date" value="" placeholder="Enter Activity Date" />
+                                        </div>
+                                        <span asp-validation-for="PostDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 col-lg-offset-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label> Activity Time</label>
+                                            <input asp-for="PostTime" type="time" value="00:00" placeholder="Enter Activity Time" />
+                                        </div>
+                                        <span asp-validation-for="PostTime" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 col-lg-offset-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <button type="submit" class="btnn" >Update Activity</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="navbar navbar-fixed-bottom">
+                <footer>
+                    <p>&nbsp;&copy; 2018 - Etkinlik</p>
+                </footer>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+﻿* {
+    margin: 0;
+}
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4)
+}
+.image {
+    position: absolute;
+    width: 2%;
+    height: 1px;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imgcontainer {
+    height: 100%;
+    position: absolute;
+    width: 10px;
+    margin-left: -580px;
+}
+
+
+.col-lg-6 col-lg-12 {
+    width: 300px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -90px;
+}
+
+.altbaslık {
+    bottom: 0px;
+    position: fixed;
+}
+
+.footerr {
+    bottom: 0px;
+    position: fixed;
+}
+
+.panel-heading {
+    padding: 5px 15px;
+ 
+}
+
+.panel-body {
+    padding: 5px 5px;
+    background-color: white;
+    
+}
+.panel-default {
+    padding: 5px 15px;
+   
+}
+.profile-img {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+    .divider-text span {
+        padding: 7px;
+        font-size: 12px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .divider-text:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        top: 55%;
+        left: 0;
+        z-index: 1;
+    }
+
+input::-webkit-input-placeholder {
+    color: gray !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+    color: gray !important;
+}
+
+input::-moz-placeholder { /* Firefox 19+ */
+    color: gray !important;
+}
+
+input:-ms-input-placeholder {
+    color: gray !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.panel {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+}
+/* 
+    Text fields 
+*/
+div.input-group-option:last-child span.input-group-addon-remove {
+    display: none;
+}
+
+div.input-group-option:last-child input.form-control {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+div.input-group-option span.input-group-addon-remove {
+    cursor: pointer;
+}
+
+div.input-group-option {
+    margin-bottom: 3px;
+}
+
+/* 
+    Selects 
+*/
+
+div.input-group-multiple-select:last-child span.input-group-addon-remove {
+    display: none;
+}
+
+div.input-group-multiple-select:last-child input.form-control {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+div.input-group-multiple-select span.input-group-addon-remove {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+div.input-group-multiple-select {
+    margin-bottom: 5px;
+}
+
+* {
+    .border-radius(0) !important;
+}
+
+#field {
+    margin-bottom: 20px;
+}

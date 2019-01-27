@@ -1,0 +1,107 @@
+﻿@model List<PostModel>
+@inject Etkinlik.Controllers.PostController PostController
+@inject  Etkinlik.Controllers.HomeController HomeController
+@{
+    ViewData["Title"] = "Etkinlik";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Etkinlik</title>
+    @Html.Partial("~/Views/metaTag.cshtml")
+</head>
+<body>
+
+    @if (Model.Count == 0)
+    {
+        <div class="error-msg">
+            <i class="fa fa-times-circle"></i>
+            Please click the below button for the add new activity...
+        </div>
+        <div class="icon">
+            <a href=Post/Add class="link plus" target="">
+                <span class="fa fa-plus-circle"></span>
+            </a>
+
+
+        </div>
+    }
+    else
+    {
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            <div class="container" style="margin-top:80px">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="panel panel-default">
+
+                            <div class="headingg">
+                                <strong style="color:white">Etkinlik Tablosu</strong>
+                            </div>
+
+                            <div>
+                                <table class="table table-hover">
+                                    <thead class="text-warning" style="color:gray">
+                                        <tr>
+
+                                            <td>Etkinlik Adı</td>
+                                            <td>Etkinlik Ayrıntısı</td>
+                                            <td>Etkinlik Saat ve Tarihi</td>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var post in Model)
+                                        {
+                                            <tr>
+                                                <td>@post.PostName</td>
+                                                <td>@post.PostDesc</td>
+                                                <td>@post.PostDate.Day:@post.PostDate.Month:@post.PostDate.Year @post.PostTime</td>
+
+                                                @{ string linkName = "link" + post.Id;
+                                                    string linkSharp = "#" + linkName;}
+                                                <td class="td-actions text-right">
+
+                                                    <i class="glyphicon glyphicon-user" style="color:gray;right: 15px;" data-toggle="collapse" data-parent="#accordion1" href=@linkSharp></i>
+
+                                                    <a href="Post/update/@post.Id" button type="submit" data-parent="#accordion1">
+
+                                                        <i class="glyphicon glyphicon-pencil" style="color:gray;right: 5px;"></i>
+
+                                                    </a>
+                                                    <a href="Post/delete/@post.Id" style="color:gray;" button type="submit" data-parent="#accordion1">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+
+                                                    </a>
+
+
+                                                    <ul id=@linkName class="collapse">
+                                                        @foreach (var userName in HomeController.getUsers(post))
+                                                        {
+                                                            <li>@userName</li>
+                                                        }
+                                                    </ul>
+                                                </td>
+
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="add-survey">
+                        <a href="Post/Add" class="btn btn-default" >Etkinlik Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    }
+
+</body>
+</html>
